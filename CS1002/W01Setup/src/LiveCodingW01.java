@@ -1,5 +1,11 @@
+import cs1002.*;
+
 public class LiveCodingW01 {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        BurgerMaker maker = new BurgerMaker(false);
+        maker.addBottomBun();
+        maker.addPatty();
+        maker.addCheese();
+        maker.addTopBun();
     }
 }
