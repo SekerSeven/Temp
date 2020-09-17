@@ -4,8 +4,24 @@ public class W01Exercise2 {
     public static void main(String[] args) {
         Burger firstBurger = new Burger();
         Burger secondBurger = new Burger();
-        //Your Java code goes here
-        
-        MultiBurgerDisplay display = new MultiBurgerDisplay(firstBurger,secondBurger);
+        firstBurger.addBottomBun();
+        firstBurger.addLettuce();
+        firstBurger.addPatty();
+        firstBurger.addBacon();
+        firstBurger.addOnions();
+        firstBurger.addMushrooms();
+        firstBurger.addTopBun();
+        firstBurger.setName("My favourite burger");
+        firstBurger.setPrice(6.99);
+
+        secondBurger.addBottomBun();
+        secondBurger.addTomato();
+        secondBurger.addVeggiePatty();
+        secondBurger.addCheese();
+        secondBurger.addPickles();
+        secondBurger.addTopBun();
+        secondBurger.setPrice(0.00);
+        secondBurger.setName("Just take it, please");
+        MultiBurgerDisplay display = new MultiBurgerDisplay(firstBurger, secondBurger);
     }
 }
