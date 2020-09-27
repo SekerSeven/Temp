@@ -37,10 +37,10 @@ public class W03Practical {
          * requested changes) without having to change every instance of them in the
          * code.
          */
-        double totalPartyPrice = noOfCakes * cakePrice + noOfSandwiches * sandwichPrice + noOfSausages * sausagePrice
+        double totalCost = noOfCakes * cakePrice + noOfSandwiches * sandwichPrice + noOfSausages * sausagePrice
                 + noOfJellies * jellyPrice + noOfInvites * invitePrice + noOfPartyBags * partyBagPrice
                 + noOfBalloons * balloonPrice + noOfParcels * parcelPrice + noOfMagicians * magicianPrice
                 + noOfVenues * venuePrice;
-        System.out.println(totalPartyPrice);
+        System.out.println(totalCost);
     }
 }
