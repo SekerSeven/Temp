@@ -26,10 +26,12 @@ public class W03PracticalEx {
                 + noOfParcels * parcelPrice;
         double venueCosts = noOfMagicians * magicianPrice + noOfVenues * venuePrice;
         double totalPartyPrice = cateringCost + itemsCost + venueCosts;
-        // Created a variable in order to more neatly format the outputs of the program.
-        // Do not fully understand how it works but I found it here:
-        // https://stackoverflow.com/questions/153724/how-to-round-a-number-to-n-decimal-places-in-java
-        // on 2020/09/27 at 17:25
+        /*
+         * Created a variable in order to more neatly format the outputs of the program.
+         * Do not fully understand how it works but I found it here:
+         * https://stackoverflow.com/questions/153724/how-to-round-a-number-to-n-decimal
+         * -places-in-java on 2020/09/27 at 17:25.
+         */
         String formatting = "%.5g%n";
         System.out.println("Catering: " + String.format(formatting, cateringCost));
         System.out.println("Items: " + String.format(formatting, itemsCost));
