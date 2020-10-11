@@ -7,8 +7,9 @@ public class Converter {
     public void convert(int weightKG) {
         if (weightKG < 1) {
             System.out.println("Invalid input!");
+            System.out.println("===End of Output===");
         } else if (weightKG == 1) {
-            System.out.println(weightKG + " kilogram in stone, pounds and ounces is:\n2 pounds and 3 ounces");
+            System.out.println(weightKG + " kilogram in stones, pounds and ounces is:\n2 pounds and 3 ounces");
         } else {
             weightOun = weightKG * 35.274;
             weightSto = (int) Math.floor(weightOun / 14 / 16);
@@ -16,7 +17,7 @@ public class Converter {
             weightPou = (int) Math.floor(weightOun / 16);
             weightOun -= weightPou * 16;
             weightOunRound = (int) Math.round(weightOun);
-            System.out.println(weightKG + " kilograms in stone pounds and ounces is:");
+            System.out.println(weightKG + " kilograms in stones, pounds and ounces is:");
         }
     }
 
