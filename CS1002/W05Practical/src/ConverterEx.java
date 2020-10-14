@@ -3,6 +3,9 @@ public class ConverterEx {
     public int weightKGRound;
     public String output = "";
 
+    // Converts the weight entered in stone, pounds and ounces into an integer
+    // weight in kilograms unless the input is outside the acceptable range, in
+    // which case it prints an error message.
     public void convert(int weightSto, int weightPou, int weightOun) {
         if (weightSto < 0 || weightPou < 0 || weightOun < 0 || (weightSto == 0 && weightPou == 0 && weightOun == 0)) {
             System.out.println("Invalid input!");
@@ -32,6 +35,8 @@ public class ConverterEx {
 
     }
 
+    // Outputs the calculated weight in kilograms with appropriate formatting
+    // depending on the number of kilograms.
     public void print() {
         if (weightKGRound == 1) {
             System.out.println(weightKGRound + " kilogram");

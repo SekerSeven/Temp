@@ -4,10 +4,12 @@ public class Converter {
     public double weightOun;
     public int weightOunRound;
 
+    // Prints an error message if an integer less than 1 is inputted. Otherwise it
+    // calculates the weight in stone, pounds and ounces of the integer number of
+    // kilograms entered.
     public void convert(int weightKG) {
         if (weightKG < 1) {
             System.out.println("Invalid input!");
-            System.out.println("===End of Output===");
         } else if (weightKG == 1) {
             System.out.println(weightKG + " kilogram in stones, pounds and ounces is:\n2 pounds and 3 ounces");
         } else {
@@ -21,14 +23,20 @@ public class Converter {
         }
     }
 
+    // This string is used to create a nicely formatted output for the weight in
+    // stone, pounds and ounces by having specific strings concatenated with this
+    // one depending on the quantities of stone, pounds and ounces returned.
     public String output = "";
 
+    // Concatenates certain strings with the output string to create and print an
+    // output containing the weight in stone, pounds and ounces of the weight in kg
+    // that was inputted.
     public void print() {
         if (weightSto == 0) {
         } else if (weightSto == 1) {
-            output += (weightSto + " stone,");
+            output += (weightSto + " stone, ");
         } else {
-            output += (weightSto + " stones,");
+            output += (weightSto + " stones, ");
         }
         if (weightPou == 0) {
         } else if (weightPou == 1) {
