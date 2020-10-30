@@ -4,5 +4,7 @@ public class W07Practical {
         tests.scenario1();
         tests.scenario2();
         tests.scenario3();
+        tests.scenario4();
+        tests.scenario5();
     }
 }
