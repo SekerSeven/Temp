@@ -1,23 +1,20 @@
 import java.util.Scanner;
 
-public class Game {
-    // The following five constants were defined in the starter code (kt54)
+public class GameEx {
     private static final String FOXPLAYS_MSG = "Fox plays. Enter move:";
     private static final String GEESEPLAY_MSG = "Geese play. Enter move:";
     private static final String ILLEGALMOVE_MSG = "Illegal move!";
     private static final String FOXWINS_MSG = "Fox wins!";
     private static final String GEESEWIN_MSG = "Geese win!";
 
-    private Board gameBoard;
+    private BoardEx gameBoard;
     Scanner reader;
 
-    // Minimal constructor. Expand as needed (kt54)
-    public Game() {
-        gameBoard = new Board();
+    public GameEx() {
+        gameBoard = new BoardEx();
         reader = new Scanner(System.in);
     }
 
-    // Build on this method to implement game logic.
     public void play() {
 
         boolean done = false;
@@ -46,13 +43,11 @@ public class Game {
                 while (gooseTurn) {
                     gameBoard.printBoard();
                     System.out.println(GEESEPLAY_MSG);
-                    // Read the line as a string
                     String command = reader.nextLine().trim();
                     if (command.equals("quit")) {
                         done = true;
                         break;
                     }
-                    // convert the command into an integer that can be used as an index
                     int row = Integer.parseInt(command);
                     command = reader.nextLine().trim();
                     if (command.equals("quit")) {
@@ -142,13 +137,10 @@ public class Game {
                         break;
                     }
                     int newColumn = Integer.parseInt(command);
-                    // Checks that the piece is being moved and that the move is on the board
                     if (row >= 0 && row < boardSize && column >= 0 && column < boardSize && newRow >= 0
                             && newRow < boardSize && newColumn >= 0 && newColumn < boardSize
                             && gameBoard.board[row][column] == fox && gameBoard.board[newRow][newColumn] == free
                             && !(newRow == row && newColumn == column)) {
-                        // Checks that the move is legal depending on what move is being made (either a
-                        // normal move or a take).
                         if (newRow < row + 2 && newRow > row - 2 && newColumn < column + 2 && newColumn > column - 2) {
                             gameBoard.board[row][column] = free;
                             gameBoard.board[newRow][newColumn] = fox;
