@@ -1,7 +1,7 @@
 public class TourEx extends ActivityEx {
     private double distance;
 
-    public TourEx(String name, String description, double cost, int capacity, DestinationEx dest, double distance) {
+    public TourEx(String name, double cost, int capacity, DestinationEx dest, double distance) {
         super(name, cost, capacity, dest);
         this.distance = distance;
         description = "walking tour";
@@ -15,6 +15,7 @@ public class TourEx extends ActivityEx {
         this.distance = distance;
     }
 
+    @Override
     public void printDetails() {
         System.out.println("Name: " + getName());
         System.out.println("Description: " + getDescription());

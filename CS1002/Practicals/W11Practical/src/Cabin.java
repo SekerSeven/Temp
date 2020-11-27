@@ -32,6 +32,7 @@ public class Cabin {
         this.pass = pass;
     }
 
+    // This method allows the booking of a room
     public void bookCabin(PassengerEx pass) {
         if (!occupied) {
             occupied = true;

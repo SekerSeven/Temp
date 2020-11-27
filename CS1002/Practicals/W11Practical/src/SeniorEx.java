@@ -1,8 +1,8 @@
 public class SeniorEx extends PassengerEx {
     private double balance;
 
-    public SeniorEx(String name, double balance) {
-        super(name);
+    public SeniorEx(String name, int memory, double balance) {
+        super(name, memory);
         this.balance = balance;
     }
 

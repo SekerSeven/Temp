@@ -2,9 +2,9 @@ public class DestinationEx {
     private String name;
     private ActivityEx[] actList;
 
-    public DestinationEx(String name, ActivityEx[] actList) {
+    public DestinationEx(String name, int num) {
         this.name = name;
-        this.actList = actList;
+        actList = new ActivityEx[num];
     }
 
     public String getName() {

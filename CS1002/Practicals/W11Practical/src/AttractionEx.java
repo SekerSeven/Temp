@@ -1,9 +1,11 @@
 public class AttractionEx extends ActivityEx {
+
     public AttractionEx(String name, double cost, int capacity, DestinationEx dest) {
         super(name, cost, capacity, dest);
         description = "visit to an attraction";
     }
 
+    @Override
     public void printDetails() {
         System.out.println("Name: " + getName());
         System.out.println("Description: " + getDescription());

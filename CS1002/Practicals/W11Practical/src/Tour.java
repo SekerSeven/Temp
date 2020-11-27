@@ -1,7 +1,7 @@
 public class Tour extends Activity {
     private double distance;
 
-    public Tour(String name, String description, double cost, int capacity, Destination dest, double distance) {
+    public Tour(String name, double cost, int capacity, Destination dest, double distance) {
         super(name, cost, capacity, dest);
         this.distance = distance;
         description = "walking tour";
@@ -15,6 +15,9 @@ public class Tour extends Activity {
         this.distance = distance;
     }
 
+    // this method is overridden to allow for the printing of details specific to
+    // this type of activity
+    @Override
     public void printDetails() {
         System.out.println("Name: " + getName());
         System.out.println("Description: " + getDescription());

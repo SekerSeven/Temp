@@ -2,9 +2,9 @@ public class Destination {
     private String name;
     private Activity[] actList;
 
-    public Destination(String name, Activity[] actList) {
+    public Destination(String name, int num) {
         this.name = name;
-        this.actList = actList;
+        actList = new Activity[num];
     }
 
     public String getName() {
@@ -23,7 +23,7 @@ public class Destination {
         return actList[num];
     }
 
-    public void setActList(int num, Activity activity) {
+    public void setActivity(int num, Activity activity) {
         this.actList[num] = activity;
     }
 }

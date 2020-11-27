@@ -14,6 +14,8 @@ public class Standard extends Passenger {
         this.balance = balance;
     }
 
+    // This method is overridden to increase the number of conditions that must be
+    // met for this type of passenger to be able to sign up
     public void bookActivity(Activity act, Cruise cruise, double balance) {
         int count2 = 0;
         if (act.getCapacity() > act.getSignUps()) {

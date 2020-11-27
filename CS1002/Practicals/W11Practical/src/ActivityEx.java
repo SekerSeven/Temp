@@ -1,10 +1,10 @@
 public class ActivityEx {
-    private String name;
+    protected String name;
     protected String description;
-    private double cost;
-    private int capacity;
-    private int signUps = 0;
-    private DestinationEx dest;
+    protected double cost;
+    protected int capacity;
+    protected int signUps = 0;
+    protected DestinationEx dest;
 
     public ActivityEx(String name, double cost, int capacity, DestinationEx dest) {
         this.name = name;

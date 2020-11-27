@@ -14,6 +14,8 @@ public class Senior extends Passenger {
         this.balance = balance;
     }
 
+    // This method is overridden in order to increase the conditions required for
+    // this type of passenger to sign up
     public void bookActivity(Activity act, Cruise cruise, double balance) {
         int count2 = 0;
         if (act.getCapacity() > act.getSignUps()) {

@@ -4,16 +4,14 @@ public class CruiseEx {
     private int passNum;
     private int destNum;
     private int cabinNum;
-    private int preCabinNum;
     private DestinationEx[] itinerary;
     private PassengerEx[] passList;
     private Cabin[] cabinList;
 
-    public CruiseEx(int capacity, int destNum, int cabinNum, int preCabinNum) {
+    public CruiseEx(String name, int capacity, int destNum, int cabinNum) {
+        this.name = name;
         this.capacity = capacity;
         this.destNum = destNum;
-        this.cabinNum = cabinNum;
-        this.preCabinNum = preCabinNum;
         itinerary = new DestinationEx[destNum];
         cabinList = new Cabin[cabinNum];
     }
@@ -78,8 +76,8 @@ public class CruiseEx {
 
     public void printItinerary() {
         System.out.println("Ship name: " + getName());
-        System.out.println("Destination list: ");
         for (int i = 0; i < getDestNum(); i++) {
+            System.out.println("Destination:");
             System.out.println("Name: " + itinerary[i].getName());
             System.out.println("Activities:");
             for (int j = 0; j < itinerary[i].getActList().length; j++) {

@@ -4,6 +4,9 @@ public class CabinPremium extends Cabin {
         super(name, occupied);
     }
 
+    // This method has been overridden to prevent non-premium passengers from
+    // booking the premium cabins
+    @Override
     public void bookCabin(PassengerEx pass) {
         if (!occupied) {
             if (pass instanceof PremiumEx) {

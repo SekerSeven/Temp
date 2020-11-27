@@ -45,7 +45,7 @@ public class PassengerEx {
         int count2 = 0;
         if (act.getCapacity() < act.getSignUps()) {
             for (int i = 0; i < cruise.getDestNum(); i++) {
-                if (act.getDest() != bookedActivities[i].getDest()) {
+                if (bookedActivities[i] == null || act.getDest() != bookedActivities[i].getDest()) {
                     count2++;
                 } else {
                     System.out.println("You've already booked an activity in this location.");
@@ -86,6 +86,8 @@ public class PassengerEx {
         count3++;
     }
 
+    // this method prints the history of the passengers cruises including the
+    // destinations they visited and the activities they did there
     public void printHistory() {
         for (int i = 0; i < memory; i++) {
             if (cruiseList[i] != null) {

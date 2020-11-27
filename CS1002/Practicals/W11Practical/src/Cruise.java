@@ -6,7 +6,8 @@ public class Cruise {
     private Destination[] itinerary;
     private Passenger[] passList;
 
-    public Cruise(int capacity, int destNum) {
+    public Cruise(String name, int capacity, int destNum) {
+        this.name = name;
         this.capacity = capacity;
         this.destNum = destNum;
         itinerary = new Destination[destNum];
@@ -58,7 +59,7 @@ public class Cruise {
 
     public void setPassListSize() {
         if (passNum <= capacity) {
-            passList = new Passenger[passNum];
+            this.passList = new Passenger[passNum];
         }
     }
 
@@ -66,10 +67,12 @@ public class Cruise {
         this.passList[pos] = passenger;
     }
 
+    // This metjod prints the list of destinations that will be visited by the
+    // cruise as well as the activities available
     public void printItinerary() {
         System.out.println("Ship name: " + getName());
-        System.out.println("Destination list: ");
         for (int i = 0; i < getDestNum(); i++) {
+            System.out.println("Destination:");
             System.out.println("Name: " + itinerary[i].getName());
             System.out.println("Activities:");
             for (int j = 0; j < itinerary[i].getActList().length; j++) {
@@ -78,6 +81,7 @@ public class Cruise {
         }
     }
 
+    // This method prints a list of the passengers on the cruise
     public void printPassList() {
         System.out.println("Ship name: " + getName());
         System.out.println("Capacity: " + getCapacity());
@@ -88,6 +92,8 @@ public class Cruise {
         }
     }
 
+    // This methods prints the remaining activities that have not yet been fully
+    // booked
     public void printRemaining() {
         for (int i = 0; i < getDestNum(); i++) {
             for (int j = 0; j < itinerary[i].getActList().length; j++) {

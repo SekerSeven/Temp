@@ -1,7 +1,7 @@
 public class Passenger {
     protected String name;
     protected int number;
-    protected int nextNumber = 0;
+    protected static int nextNumber = 0;
     protected Activity[] bookedActivities;
 
     public Passenger(String name) {
@@ -35,11 +35,13 @@ public class Passenger {
 
     protected int count = 0;
 
+    // This method books a passenger onto an activity provided they meet the
+    // requirements
     public void bookActivity(Activity act, Cruise cruise) {
         int count2 = 0;
-        if (act.getCapacity() < act.getSignUps()) {
+        if (act.getCapacity() > act.getSignUps()) {
             for (int i = 0; i < cruise.getDestNum(); i++) {
-                if (act.getDest() != bookedActivities[i].getDest()) {
+                if (bookedActivities[i] == null || act.getDest() != bookedActivities[i].getDest()) {
                     count2++;
                 } else {
                     System.out.println("You've already booked an activity in this location.");
@@ -56,11 +58,15 @@ public class Passenger {
         }
     }
 
+    // This method is used in the print passenger list method in the cruise class it
+    // prints the name and number of the passenger
     public void printBooking() {
         System.out.println("Name: " + getName());
         System.out.println("Number: " + getNumber());
     }
 
+    // This method prints all the details of the passenger including the activities
+    // they have booked themselves onto
     public void printDetails() {
         System.out.println("Name: " + getName());
         System.out.println("Number: " + getNumber());

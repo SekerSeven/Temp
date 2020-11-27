@@ -1,8 +1,8 @@
 public class StandardEx extends PassengerEx {
     private double balance;
 
-    public StandardEx(String name, double balance) {
-        super(name);
+    public StandardEx(String name, int memory, double balance) {
+        super(name, memory);
         this.balance = balance;
     }
 
