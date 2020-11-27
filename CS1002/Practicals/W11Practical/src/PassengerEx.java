@@ -3,10 +3,16 @@ public class PassengerEx {
     protected int number;
     protected int nextNumber = 0;
     protected ActivityEx[] bookedActivities;
+    protected int memory;
+    protected CruiseEx[] cruiseList;
+    protected ActivityEx[][] activityList;
 
-    public PassengerEx(String name) {
+    public PassengerEx(String name, int memory) {
         this.name = name;
         this.number = ++nextNumber;
+        this.memory = memory;
+        cruiseList = new CruiseEx[memory];
+        activityList = new ActivityEx[memory][memory];
     }
 
     public String getName() {
@@ -70,5 +76,33 @@ public class PassengerEx {
                 bookedActivities[i].printBooking();
             }
         }
+    }
+
+    private int count3 = 0;
+
+    public void storeCruise(CruiseEx cruise) {
+        cruiseList[count3] = cruise;
+        activityList[count3] = bookedActivities;
+        count3++;
+    }
+
+    public void printHistory() {
+        for (int i = 0; i < memory; i++) {
+            if (cruiseList[i] != null) {
+                System.out.println("Ship name: " + cruiseList[i].getName());
+                System.out.println("Capacity: " + cruiseList[i].getCapacity());
+                System.out.println("Destination list: ");
+                for (int j = 0; j < cruiseList[i].getDestNum(); j++) {
+                    System.out.println("Name: " + cruiseList[i].getDestination(j).getName());
+                }
+                System.out.println("Activities:");
+                for (int j = 0; j < activityList[i].length; j++) {
+                    if (bookedActivities[i] != null) {
+                        bookedActivities[i].printBooking();
+                    }
+                }
+            }
+        }
+
     }
 }

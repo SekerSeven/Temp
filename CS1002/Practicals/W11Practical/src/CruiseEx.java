@@ -54,6 +54,10 @@ public class CruiseEx {
         return itinerary;
     }
 
+    public DestinationEx getDestination(int num) {
+        return itinerary[num];
+    }
+
     public void setItinerary(int pos, DestinationEx destination) {
         this.itinerary[pos] = destination;
     }
@@ -110,7 +114,8 @@ public class CruiseEx {
         for (int i = 0; i < cabinNum; i++) {
             System.out.println("Cabin name: " + cabinList[i].getName());
             if (cabinList[i].getOccupied()) {
-                System.out.println(cabinList[i].get);
+                System.out.println("Occupant name: " + cabinList[i].getPassenger().getName());
+                System.out.println("Occupant number: " + cabinList[i].getPassenger().getNumber());
             } else {
                 System.out.println("Unoccupied");
             }

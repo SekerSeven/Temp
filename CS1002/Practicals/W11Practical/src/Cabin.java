@@ -1,7 +1,7 @@
 public class Cabin {
-    private String name;
-    private boolean occupied;
-    private PassengerEx pass;
+    protected String name;
+    protected boolean occupied;
+    protected PassengerEx pass;
 
     public Cabin(String name, boolean occupied) {
         this.name = name;
