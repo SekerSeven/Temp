@@ -16,12 +16,13 @@ public class Standard extends Passenger {
 
     // This method is overridden to increase the number of conditions that must be
     // met for this type of passenger to be able to sign up
-    public void bookActivity(Activity act, Cruise cruise, double balance) {
+    @Override
+    public void bookActivity(Activity act, Cruise cruise) {
         int count2 = 0;
         if (act.getCapacity() > act.getSignUps()) {
             if (balance >= act.getCost()) {
                 for (int i = 0; i < cruise.getDestNum(); i++) {
-                    if (act.getDest() != bookedActivities[i].getDest()) {
+                    if (bookedActivities[i] == null || act.getDest() != bookedActivities[i].getDest()) {
                         count2++;
                     } else {
                         System.out.println("You've already booked an activity in this location.");
@@ -31,6 +32,7 @@ public class Standard extends Passenger {
                 if (count2 == cruise.getDestNum()) {
                     act.setSignUps(act.getSignUps() + 1);
                     bookedActivities[count] = act;
+                    balance -= act.getCost();
                     count++;
                 }
             } else {

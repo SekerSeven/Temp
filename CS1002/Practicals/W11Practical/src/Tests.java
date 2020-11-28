@@ -1,17 +1,17 @@
 public class Tests {
 
-    // TODO: Brief description of the scenario goes here - what is this scenario
-    // testing?
+    // This scenario tests the normal function of all the classes as well as the
+    // rejection of invalid activity booking for all possible reasons.
     public void scenario1() {
         Cruise c = new Cruise("Titanic", 5, 3);
         c.setPassNum(5);
         c.setPassListSize();
 
-        Passenger p = new Standard("John", 50);
-        Passenger p2 = new Standard("Jane", 100);
-        Passenger p3 = new Senior("Alice", 50);
-        Passenger p4 = new Senior("Bob", 25);
-        Passenger p5 = new Premium("Eve");
+        Standard p = new Standard("John", 40);
+        Standard p2 = new Standard("Jane", 100);
+        Senior p3 = new Senior("Alice", 40);
+        Senior p4 = new Senior("Bob", 46);
+        Premium p5 = new Premium("Eve");
 
         Destination d = new Destination("London", 3);
         Attraction a = new Attraction("London Eye", 10, 3, d);
@@ -75,17 +75,39 @@ public class Tests {
         System.out.print("\n");
         p.printDetails();
         System.out.print("\n");
+        p2.printDetails();
+        System.out.print("\n");
         p3.printDetails();
+        System.out.print("\n");
+        p4.printDetails();
         System.out.print("\n");
         p5.printDetails();
         System.out.print("\n");
         c.printRemaining();
+        System.out.print("\n");
     }
 
-    // TODO: Brief description of the scenario goes here - what is this scenario
-    // testing?
+    // This scenario tests that it is acceptable for a passenger to not book any
+    // activities
     public void scenario2() {
-        // TODO: create some objects and call some methods to test they work
+        Cruise c = new Cruise("Nautilus", 2, 1);
+        c.setPassNum(1);
+        c.setPassListSize();
+        Standard p = new Standard("John", 40);
+        Destination d = new Destination("London", 1);
+        Attraction a = new Attraction("London Eye", 10, 3, d);
+        d.setActivity(0, a);
+        c.setItinerary(0, d);
+        c.setPassList(0, p);
+        p.setListSize(c);
+        c.printItinerary();
+        System.out.print("\n");
+        c.printPassList();
+        System.out.print("\n");
+        p.printDetails();
+        System.out.print("\n");
+        c.printRemaining();
+        System.out.print("\n");
     }
 
     // TODO: Brief description of the scenario goes here - what is this scenario

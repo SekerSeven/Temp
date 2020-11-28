@@ -14,12 +14,13 @@ public class SeniorEx extends PassengerEx {
         this.balance = balance;
     }
 
-    public void bookActivity(ActivityEx act, CruiseEx cruise, double balance) {
+    @Override
+    public void bookActivity(ActivityEx act, CruiseEx cruise) {
         int count2 = 0;
         if (act.getCapacity() > act.getSignUps()) {
             if (balance >= act.getCost() * 0.9) {
                 for (int i = 0; i < cruise.getDestNum(); i++) {
-                    if (act.getDest() != bookedActivities[i].getDest()) {
+                    if (bookedActivities[i] == null || act.getDest() != bookedActivities[i].getDest()) {
                         count2++;
                     } else {
                         System.out.println("You've already booked an activity in this location.");
@@ -29,6 +30,7 @@ public class SeniorEx extends PassengerEx {
                 if (count2 == cruise.getDestNum()) {
                     act.setSignUps(act.getSignUps() + 1);
                     bookedActivities[count] = act;
+                    balance -= act.getCost() * 0.9;
                     count++;
                 }
             } else {
