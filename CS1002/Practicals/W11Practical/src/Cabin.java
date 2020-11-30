@@ -1,11 +1,10 @@
 public class Cabin {
     protected String name;
-    protected boolean occupied;
+    protected boolean occupied = false;
     protected PassengerEx pass;
 
-    public Cabin(String name, boolean occupied) {
+    public Cabin(String name) {
         this.name = name;
-        this.occupied = occupied;
     }
 
     public String getName() {

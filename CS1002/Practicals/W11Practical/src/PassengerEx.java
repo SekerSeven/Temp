@@ -1,7 +1,7 @@
 public class PassengerEx {
     protected String name;
     protected int number;
-    protected int nextNumber = 0;
+    protected static int nextNumber = 0;
     protected ActivityEx[] bookedActivities;
     protected int memory;
     protected CruiseEx[] cruiseList;
@@ -39,23 +39,17 @@ public class PassengerEx {
         bookedActivities = new ActivityEx[cruise.getDestNum()];
     }
 
-    protected int count = 0;
-
     public void bookActivity(ActivityEx act, CruiseEx cruise) {
-        int count2 = 0;
         if (act.getCapacity() < act.getSignUps()) {
             for (int i = 0; i < cruise.getDestNum(); i++) {
-                if (bookedActivities[i] == null || act.getDest() != bookedActivities[i].getDest()) {
-                    count2++;
-                } else {
+                if (bookedActivities[i] == null) {
+                    act.setSignUps(act.getSignUps() + 1);
+                    bookedActivities[i] = act;
+                    break;
+                } else if (act.getDest() == bookedActivities[i].getDest()) {
                     System.out.println("You've already booked an activity in this location.");
                     break;
                 }
-            }
-            if (count2 == cruise.getDestNum()) {
-                act.setSignUps(act.getSignUps() + 1);
-                bookedActivities[count] = act;
-                count++;
             }
         } else {
             System.out.println("This activity is full so you cannot book it.");
@@ -86,7 +80,7 @@ public class PassengerEx {
         count3++;
     }
 
-    // this method prints the history of the passengers cruises including the
+    // This method prints the history of the passengers cruises including the
     // destinations they visited and the activities they did there
     public void printHistory() {
         for (int i = 0; i < memory; i++) {

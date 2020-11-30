@@ -73,7 +73,7 @@ public class Activity {
     // method in the passenger class
     public void printBooking() {
         System.out.println("Name: " + getName());
-        System.out.println("Destination: " + getDest());
+        System.out.println("Destination: " + getDest().getName());
         System.out.println("Price: £" + getCost());
     }
 }

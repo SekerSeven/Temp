@@ -1,7 +1,7 @@
 public class CabinPremium extends Cabin {
 
-    public CabinPremium(String name, boolean occupied) {
-        super(name, occupied);
+    public CabinPremium(String name) {
+        super(name);
     }
 
     // This method has been overridden to prevent non-premium passengers from

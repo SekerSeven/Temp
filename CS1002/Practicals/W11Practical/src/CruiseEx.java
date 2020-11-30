@@ -3,17 +3,16 @@ public class CruiseEx {
     private int capacity;
     private int passNum;
     private int destNum;
-    private int cabinNum;
     private DestinationEx[] itinerary;
     private PassengerEx[] passList;
     private Cabin[] cabinList;
 
-    public CruiseEx(String name, int capacity, int destNum, int cabinNum) {
+    public CruiseEx(String name, int capacity, int destNum) {
         this.name = name;
         this.capacity = capacity;
         this.destNum = destNum;
         itinerary = new DestinationEx[destNum];
-        cabinList = new Cabin[cabinNum];
+        cabinList = new Cabin[capacity];
     }
 
     public String getName() {
@@ -108,8 +107,9 @@ public class CruiseEx {
         }
     }
 
+    // This method prints the cabin alloccation as per the method name
     public void printCabinAllocation() {
-        for (int i = 0; i < cabinNum; i++) {
+        for (int i = 0; i < capacity; i++) {
             System.out.println("Cabin name: " + cabinList[i].getName());
             if (cabinList[i].getOccupied()) {
                 System.out.println("Occupant name: " + cabinList[i].getPassenger().getName());

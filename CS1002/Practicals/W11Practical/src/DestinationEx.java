@@ -23,7 +23,7 @@ public class DestinationEx {
         return actList[num];
     }
 
-    public void setActList(int num, ActivityEx activity) {
+    public void setActivity(int num, ActivityEx activity) {
         this.actList[num] = activity;
     }
 }
